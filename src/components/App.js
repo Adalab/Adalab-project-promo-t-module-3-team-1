@@ -41,51 +41,51 @@ function App() {
         </section>
 
         <section className="form">
-          <h2 className="title">Información</h2>
+          <h2 className="form__title">Información</h2>
 
-          <section className="ask-info">
-            <p className="subtitle">Cuéntanos sobre el proyecto</p>
-            <hr className="line" />
+          <section className="form__askinfo">
+            <p className="form__askinfo--subtitle">Cuéntanos sobre el proyecto</p>
+            <hr className="form__askinfo--line" />
           </section>
 
-          <fieldset className="project">
+          <fieldset className="form__project">
             <input
-              className="input"
+              className="form__project--input"
               type="text"
               placeholder="Nombre del proyecto"
               name="name"
               id="name"
             />
             <input
-              className="input"
+              className="form__project--input"
               type="text"
               name="slogan"
               id="slogan"
               placeholder="Slogan"
             />
             <input
-              className="input"
+              className="form__project--input"
               type="text"
               name="repo"
               id="repo"
               placeholder="Repo"
             />
             <input
-              className="input"
+              className="form__project--input"
               type="text"
               placeholder="Demo"
               name="demo"
               id="demo"
             />
             <input
-              className="input"
+              className="form__project--input"
               type="text"
               placeholder="Tecnologías"
               name="technologies"
               id="technologies"
             />
             <textarea
-              className="textarea"
+              className="form__project--textarea"
               type="text"
               placeholder="Descripción"
               name="desc"
@@ -93,21 +93,21 @@ function App() {
             ></textarea>
           </fieldset>
 
-          <section className="ask-info">
-            <p className="subtitle">Cuéntanos sobre la autora</p>
-            <hr className="line" />
+          <section className="form__askinfo">
+            <p className="form__askinfo--subtitle">Cuéntanos sobre la autora</p>
+            <hr className="form__askinfo--line" />
           </section>
 
-          <fieldset className="autor">
+          <fieldset className="form__autor">
             <input
-              className="input"
+              className="form__autor--input"
               type="text"
               placeholder="Nombre"
               name="autor"
               id="autor"
             />
             <input
-              className="input"
+              className="form__autor--input"
               type="text"
               placeholder="Trabajo"
               name="job"
@@ -115,17 +115,17 @@ function App() {
             />
           </fieldset>
 
-          <section className="buttons-img">
-            <button className="btn">Subir foto de proyecto</button>
-            <button className="btn">Subir foto de autora</button>
+          <section className="form__buttons-img">
+            <button className="form__buttons-img--btn">Subir foto de proyecto</button>
+            <button className="form__buttons-img--btn">Subir foto de autora</button>
           </section>
-          <section className="buttons-img">
-            <button className="btn-large" onClick="{handleClickCreateCard}">
+          <section className="form__buttons-img">
+            <button className="form__buttons-img--btnlarge" onClick="{handleClickCreateCard}">
               Crear Tarjeta
             </button>
           </section>
 
-          <section className="card">
+          <section className="form__card">
             <span className=""> La tarjeta ha sido creada: </span>
             <a href="#" className="" target="_blank" rel="noreferrer"> </a>
           </section>

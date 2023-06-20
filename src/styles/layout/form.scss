@@ -1,0 +1,120 @@
+.form{
+    background-color: #302c42;
+    width: 40%;
+    &__title{
+      color: #ffffff;
+      text-align: center;
+      font-size: 40px;
+    }
+    &__askinfo{
+      padding: 20px;
+      text-align: center;
+      color: white;
+      &--subtitle{
+        padding-bottom: 10px;
+      }
+      &--line{
+        width: 100%;
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0)
+      );
+      }
+    }
+    &__project{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 10px;
+      border: none;
+      &--input{
+        background-color: #302c42;
+        border-color: white;
+        border-radius: 40px;
+        height: 42.72px;
+        color: #ffffff;
+        padding-left: 15px;
+        padding-top: 5px;
+      }
+      &--textarea{
+        background-color: #302c42;
+        border-color: white;
+        border-radius: 40px;
+        height: 42.72px;
+        color: #ffffff;
+        padding-left: 15px;
+        padding-top: 5px;
+        height: 110px;
+      }
+      &--input::placeholder{
+        color: #ffffff;
+      }
+      &--textarea::placeholder {
+        color: #ffffff;
+      }
+    }
+    &__autor{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 10px;
+      border: none;
+      &--input{
+        background-color: #302c42;
+        border-color: white;
+        border-radius: 40px;
+        height: 42.72px;
+        color: #ffffff;
+        padding-left: 15px;
+        padding-top: 5px;
+      }
+      &--textarea{
+        background-color: #302c42;
+        border-color: white;
+        border-radius: 40px;
+        height: 42.72px;
+        color: #ffffff;
+        padding-left: 15px;
+        padding-top: 5px;
+        height: 110px;
+      }
+      &--input::placeholder{
+        color: #ffffff;
+      }
+      &--textarea::placeholder {
+        color: #ffffff;
+      }
+    }
+    &__buttons-img {
+      text-align: center;
+      &--btn{
+        width: 160px;
+        margin-top: 10px;
+        color: white;
+        text-align: center;
+        border: none;
+        height: 43px;
+        background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+        border-radius: 40px;
+      }
+      &--btnlarge{
+        margin-top: 10px;
+        color: white;
+        text-align: center;
+        height: 43px;
+        background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+        border-radius: 40px;
+        width: 200px;
+        border: solid 2px white;
+      }
+    }
+    &__card {
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  }
