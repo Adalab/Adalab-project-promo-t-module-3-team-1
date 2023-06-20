@@ -4,7 +4,6 @@ import cover2 from '../images/cover_2.jpeg';
 import favicon from '../images/favicon.png';
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
-
 function App() {
   return (
     <div className="container">
