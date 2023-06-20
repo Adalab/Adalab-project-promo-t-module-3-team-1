@@ -4,52 +4,55 @@ import cover2 from '../images/cover_2.jpeg';
 import favicon from '../images/favicon.png';
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faLaptopCode } from '@fortawesome/fa-solid fa-laptop-code';
 
 function App() {
   return (
     <div className="container">
       <header className="header">
-        <p className="text">Proyectos Molones</p>
+      {/*<FontAwesomeIcon icon={faLaptopCode} style={{color: "#ffffff",}} />*/}
+        <p className="header__text">Proyectos Molones</p>
       </header>
       <main className="main">
         <section className="preview">
-          <img className="image" src={cover} alt="#" />
+          <img className="preview__image" src={cover} alt="#" />
 
-          <section className="autor">
-            <section className="info-project">
-              <p className="subtitle">Personal Project Card</p>
-              <hr className="line" />
+          <section className="preview__autor">
+            <section className="project info-project">
+              <p className="project__subtitle">Personal Project Card</p>
+              <hr className="project__line" />
 
-              <h2 className="title">Elegant Workspace</h2>
-              <p className="slogan">Diseños Exclusivos</p>
-              <p className="desc">
+              <h2 className="project__title">Elegant Workspace</h2>
+              <p className="project__slogan">Diseños Exclusivos</p>
+              <p className="project__desc">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Libero, delectus? Voluptates at hic aliquam porro ad suscipit
                 harum laboriosam saepe earum doloribus aperiam, ullam culpa
                 accusantium placeat odit corrupti ipsum!
               </p>
-              <section className="technologies">
-                <p className="text">React JS, MongoDB</p>
+              <section className="project__technologies">
+                <p className="project__technologies--text">React JS, MongoDB</p>
               </section>
             </section>
 
-            <section className="info-autor">
-              <img className="image" src={user} alt="#" />
-              <p className="job">Full Stack Developer</p>
-              <p className="name">Emmelie Björklund</p>
+            <section className="infoautor info-autor">
+              <img className="infoautor__image" src={user} alt="#" />
+              <p className="infoautor__job">Full Stack Developer</p>
+              <p className="infoautor__name">Emmelie Björklund</p>
             </section>
           </section>
         </section>
 
         <section className="form">
-          <h2 className="title">Información</h2>
+          <h2 className="form__title">Información</h2>
 
-          <section className="ask-info">
-            <p className="subtitle">Cuéntanos sobre el proyecto</p>
-            <hr className="line" />
+          <section className="form__askinfo ask-info">
+            <p className="form__askinfo--subtitle">Cuéntanos sobre el proyecto</p>
+            <hr className="form__askinfo--line" />
           </section>
 
-          <fieldset className="project">
+          <fieldset className="form__project">
             <input
               className="input"
               type="text"
@@ -94,12 +97,12 @@ function App() {
             ></textarea>
           </fieldset>
 
-          <section className="ask-info">
+          <section className="form__ask-info">
             <p className="subtitle">Cuéntanos sobre la autora</p>
             <hr className="line" />
           </section>
 
-          <fieldset className="autor">
+          <fieldset className="form__autor">
             <input
               className="input"
               type="text"
@@ -116,17 +119,17 @@ function App() {
             />
           </fieldset>
 
-          <section className="buttons-img">
+          <section className="form__buttons-img">
             <button className="btn">Subir foto de proyecto</button>
             <button className="btn">Subir foto de autora</button>
           </section>
-          <section className="buttons-img">
+          <section className="form__buttons-img">
             <button className="btn-large" onClick="{handleClickCreateCard}">
               Crear Tarjeta
             </button>
           </section>
 
-          <section className="card">
+          <section className="form__card">
             <span className=""> La tarjeta ha sido creada: </span>
             <a href="#" className="" target="_blank" rel="noreferrer"> </a>
           </section>
