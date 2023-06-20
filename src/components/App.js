@@ -9,34 +9,34 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <p className="text">Proyectos Molones</p>
+        <p className="header__text">Proyectos Molones</p>
       </header>
       <main className="main">
         <section className="preview">
-          <img className="image" src={cover} alt="#" />
+          <img className="preview__image" src={cover} alt="#" />
 
-          <section className="autor">
-            <section className="info-project">
-              <p className="subtitle">Personal Project Card</p>
-              <hr className="line" />
+          <section className="preview__autor">
+            <section className="preview__autor--infoproject project">
+              <p className="project__subtitle">Personal Project Card</p>
+              <hr className="project__line" />
 
-              <h2 className="title">Elegant Workspace</h2>
-              <p className="slogan">Diseños Exclusivos</p>
-              <p className="desc">
+              <h2 className="project__title">Elegant Workspace</h2>
+              <p className="project__slogan">Diseños Exclusivos</p>
+              <p className="project__desc">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Libero, delectus? Voluptates at hic aliquam porro ad suscipit
                 harum laboriosam saepe earum doloribus aperiam, ullam culpa
                 accusantium placeat odit corrupti ipsum!
               </p>
-              <section className="technologies">
-                <p className="text">React JS, MongoDB</p>
+              <section className="project__technologies">
+                <p className="project__technologies--text">React JS, MongoDB</p>
               </section>
             </section>
 
-            <section className="info-autor">
-              <img className="image" src={user} alt="#" />
-              <p className="job">Full Stack Developer</p>
-              <p className="name">Emmelie Björklund</p>
+            <section className="preview__autor--infoautor infoAutor">
+              <img className="infoAutor__image" src={user} alt="#" />
+              <p className="infoAutor__job">Full Stack Developer</p>
+              <p className="infoAutor__name">Emmelie Björklund</p>
             </section>
           </section>
         </section>
