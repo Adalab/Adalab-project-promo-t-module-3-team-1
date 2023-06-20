@@ -1,15 +1,15 @@
 .form{
-    background-color: #302c42;
+    background-color: $dark;
     width: 40%;
     &__title{
-      color: #ffffff;
+      color: $white;
       text-align: center;
       font-size: 40px;
     }
     &__askinfo{
       padding: 20px;
       text-align: center;
-      color: white;
+      color: $white;
       &--subtitle{
         padding-bottom: 10px;
       }
@@ -32,29 +32,29 @@
       gap: 10px;
       border: none;
       &--input{
-        background-color: #302c42;
-        border-color: white;
+        background-color: $dark;
+        border-color: $white;
         border-radius: 40px;
         height: 42.72px;
-        color: #ffffff;
+        color: $white;
         padding-left: 15px;
         padding-top: 5px;
       }
       &--textarea{
-        background-color: #302c42;
-        border-color: white;
+        background-color: $dark;
+        border-color: $white;
         border-radius: 40px;
         height: 42.72px;
-        color: #ffffff;
+        color: $white;
         padding-left: 15px;
         padding-top: 5px;
         height: 110px;
       }
       &--input::placeholder{
-        color: #ffffff;
+        color: $white;
       }
       &--textarea::placeholder {
-        color: #ffffff;
+        color: $white;
       }
     }
     &__autor{
@@ -64,29 +64,29 @@
       gap: 10px;
       border: none;
       &--input{
-        background-color: #302c42;
-        border-color: white;
+        background-color: $dark;
+        border-color: $white;
         border-radius: 40px;
         height: 42.72px;
-        color: #ffffff;
+        color: $white;
         padding-left: 15px;
         padding-top: 5px;
       }
       &--textarea{
-        background-color: #302c42;
-        border-color: white;
+        background-color: $dark;
+        border-color: $white;
         border-radius: 40px;
         height: 42.72px;
-        color: #ffffff;
+        color: $white;
         padding-left: 15px;
         padding-top: 5px;
         height: 110px;
       }
       &--input::placeholder{
-        color: #ffffff;
+        color: $white;
       }
       &--textarea::placeholder {
-        color: #ffffff;
+        color: $white;
       }
     }
     &__buttons-img {
@@ -94,26 +94,26 @@
       &--btn{
         width: 160px;
         margin-top: 10px;
-        color: white;
+        color: $white;
         text-align: center;
         border: none;
         height: 43px;
-        background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+        background: linear-gradient(90deg, $dark-lilac -1.57%, $light-lilac 98.43%);
         border-radius: 40px;
       }
       &--btnlarge{
         margin-top: 10px;
-        color: white;
+        color: $white;
         text-align: center;
         height: 43px;
-        background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
+        background: linear-gradient(90deg, $dark-lilac -1.57%, $light-lilac 98.43%);
         border-radius: 40px;
         width: 200px;
-        border: solid 2px white;
+        border: solid 2px $white;
       }
     }
     &__card {
-      color: white;
+      color: $white;
       text-align: center;
       padding: 20px;
     }

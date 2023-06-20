@@ -11,8 +11,8 @@
       flex-direction: column;
       gap: 10px;
       border: none;
-      background-color: white;
-      color: #3e3e3e;
+      background-color: $white;
+      color: $dark-grey;
       width: 90%;
       height: 50%;
       transform: translateY(-100px);
@@ -50,7 +50,7 @@
     }
     &__title{
       font-size: 20px;
-      color: black;
+      color: $black;
       margin-bottom: 10px;
     }
     &__slogan{
@@ -62,7 +62,7 @@
       margin-bottom: 10px;
     }
     &__technologies{
-      background-color: lightgray;
+      background-color: $light-grey;
       border-radius: 20px;
       font-size: 14px;
       padding: 10px;
@@ -79,7 +79,7 @@
     }
     &__job{
       font-weight: bold;
-      color: black;
+      color: $black;
       font-size: 14px;
     }
     &__name{
