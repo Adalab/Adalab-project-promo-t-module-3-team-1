@@ -1,0 +1,14 @@
+.container {
+  background-color: #302c42;
+  height: 100vh;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &__text {
+    color: white;
+  }
+}
