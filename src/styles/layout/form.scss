@@ -1,6 +1,11 @@
 .form{
     background-color: $dark;
-    width: 40%;
+    padding: 170px 60px 0;
+    width: 100%;
+    @include tablet() {
+      padding-top: 20px;
+    }
+
     &__title{
       color: $white;
       text-align: center;
@@ -43,12 +48,13 @@
       &--textarea{
         background-color: $dark;
         border-color: $white;
-        border-radius: 40px;
+        border-radius: 30px;
         height: 42.72px;
         color: $white;
         padding-left: 15px;
-        padding-top: 5px;
+        padding-top: 15px;
         height: 110px;
+        
       }
       &--input::placeholder{
         color: $white;
