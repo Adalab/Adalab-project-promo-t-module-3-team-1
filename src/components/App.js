@@ -1,14 +1,19 @@
 import '../styles/main.scss';
 import cover from '../images/cover.jpeg';
-import cover2 from '../images/cover_2.jpeg';
-import favicon from '../images/favicon.png';
-import logo from '../images/logo-adalab.png';
+//import cover2 from '../images/cover_2.jpeg';
+
+//import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+
+
 function App() {
   return (
     <div className="container">
       <header className="header">
-        <p className="header__text">Proyectos Molones</p>
+        <p className="header__text"><FontAwesomeIcon icon={faLaptopCode} size="2xl" />Proyectos Molones</p>
       </header>
       <main className="main">
         <section className="preview">
@@ -28,7 +33,7 @@ function App() {
                 accusantium placeat odit corrupti ipsum!
               </p>
               <section className="project__technologies">
-                <p className="project__technologies--text">React JS, MongoDB</p>
+                <p className="project__technologies--text">React JS, MongoDB<FontAwesomeIcon icon={faGlobe} /></p>
               </section>
             </section>
 
