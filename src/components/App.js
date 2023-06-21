@@ -21,7 +21,7 @@ function App() {
       </header>
 
       <main className="main">
-        <section>
+        <section className='main__hero'>
           <h1>Proyectos Molones</h1>
           <p>Escaparate en línea para recoger ideas a través de la tecnología.</p>
           <button>VER PROYECTOS</button>
