@@ -1,10 +1,17 @@
 import '../styles/main.scss';
 import cover from '../images/cover.jpeg';
-import cover2 from '../images/cover_2.jpeg';
-import favicon from '../images/favicon.png';
-import logo from '../images/logo-adalab.png';
+/*import cover2 from '../images/cover_2.jpeg';
+import logo from '../images/logo-adalab.png';*/
 import user from '../images/user.jpeg';
+import { useState } from 'react';
 function App() {
+  const [name,setName] = useState('');
+
+  const handleInputName = (ev) => {
+    setName(ev.target.value);
+  };
+
+
   return (
     <div className="container">
       <header className="header">
@@ -19,7 +26,7 @@ function App() {
               <p className="project__subtitle">Personal Project Card</p>
               <hr className="project__line" />
 
-              <h2 className="project__title">Elegant Workspace</h2>
+              <h2 className="project__title">{name || 'Elegante Workspace'} </h2>
               <p className="project__slogan">Diseños Exclusivos</p>
               <p className="project__desc">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -55,6 +62,8 @@ function App() {
               placeholder="Nombre del proyecto"
               name="name"
               id="name"
+              onInput={handleInputName}
+              value={name}
             />
             <input
               className="form__project--input"
@@ -127,7 +136,7 @@ function App() {
 
           <section className="form__card">
             <span className=""> La tarjeta ha sido creada: </span>
-            <a href="#" className="" target="_blank" rel="noreferrer"> </a>
+            <a href="./#" className="" target="_blank" rel="noreferrer"> </a>
           </section>
         </section>
       </main>
