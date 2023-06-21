@@ -141,6 +141,9 @@ function App() {
           </section>
         </div>
       </main>
+      <footer className="main"> 
+         <img src={logo} alt="logo Adalab" />  
+      </footer>
     </div>
   );
 }
