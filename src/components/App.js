@@ -4,15 +4,28 @@ import cover from '../images/cover.jpeg';
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
 import { useState } from 'react';
-
+let data = {
+  name:''
+  ,slogan:''
+  ,repo:''
+  ,demo:''
+  ,technologies:''
+  ,desc:''
+  ,author:''
+  ,job:''
+  ,projImg:''
+  ,authImg:''
+}
 function App() {
-  const [name,setName] = useState('');
-
-  const handleInputName = (ev) => {
-    setName(ev.target.value);
-  };
-
-
+  const handleClickCreateCard = (ev) => {
+    //ev.preventDefault();
+    console.log('Has clicado el boton');
+  }
+  let [input,setInputs ] = useState (data);
+  const handleInputs = (ev) => {
+    const inputId = ev.target.id;
+    setInputs({...input,[inputId]:ev.target.value});
+  }
   return (
     <div className="container">
       <header className="header">
@@ -34,7 +47,7 @@ function App() {
               <section className="preview__autor--infoproject project">
                 <p className="project__subtitle">Personal Project Card</p>
                 <hr className="project__line" />
-                <h2 className="project__title">{name || 'Elegante Workspace'} </h2>
+                <h2 className="project__title">{data.name || 'Elegante Workspace'} </h2>
                 <p className="project__slogan">Diseños Exclusivos</p>
                 <p className="project__desc">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -66,15 +79,17 @@ function App() {
                 placeholder="Nombre del proyecto"
                 name="name"
                 id="name"
-                onInput={handleInputName}
-                value={name}
+                onInput={handleInputs}
+                value={input.name}
               />
               <input
                 className="form__project--input"
                 type="text"
                 name="slogan"
                 id="slogan"
+                onInput={handleInputs}
                 placeholder="Slogan"
+                value={input.slogan}
               />
               <input
                 className="form__project--input"
@@ -82,6 +97,8 @@ function App() {
                 name="repo"
                 id="repo"
                 placeholder="Repo"
+                onInput={handleInputs}
+                value={input.repo}
               />
               <input
                 className="form__project--input"
@@ -89,6 +106,8 @@ function App() {
                 placeholder="Demo"
                 name="demo"
                 id="demo"
+                onInput={handleInputs}
+                value={input.demo}
               />
               <input
                 className="form__project--input"
@@ -96,6 +115,8 @@ function App() {
                 placeholder="Tecnologías"
                 name="technologies"
                 id="technologies"
+                onInput={handleInputs}
+                value={input.technologies}
               />
               <textarea
                 className="form__project--textarea"
@@ -103,6 +124,8 @@ function App() {
                 placeholder="Descripción"
                 name="desc"
                 id="desc"
+                onInput={handleInputs}
+                value={input.desc}
               ></textarea>
             </fieldset>
             <section className="form__askinfo">
@@ -115,7 +138,9 @@ function App() {
                 type="text"
                 placeholder="Nombre"
                 name="autor"
-                id="autor"
+                id="author"
+                onInput={handleInputs}
+                value={input.author}
               />
               <input
                 className="form__autor--input"
@@ -123,6 +148,8 @@ function App() {
                 placeholder="Trabajo"
                 name="job"
                 id="job"
+                onInput={handleInputs}
+                value={input.job}
               />
             </fieldset>
             <section className="form__buttons-img">
@@ -130,7 +157,7 @@ function App() {
               <button className="form__buttons-img--btn">Subir foto de autora</button>
             </section>
             <section className="form__buttons-img">
-              <button className="form__buttons-img--btnlarge" onClick="{handleClickCreateCard}">
+              <button className="form__buttons-img--btnlarge" onClick={handleClickCreateCard}>
                 Crear Tarjeta
               </button>
             </section>
