@@ -4,6 +4,10 @@ import cover from '../images/cover.jpeg';
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 let data = {
   name:''
   ,slogan:''
@@ -29,7 +33,7 @@ function App() {
   return (
     <div className="container">
       <header className="header">
-        <p className="header__text">Proyectos Molones</p>
+        <p className="header__text"><FontAwesomeIcon icon={faLaptopCode} size="2xl" />Proyectos Molones</p>
         <img src={logo} alt="logo Adalab" />    
       </header>
 
@@ -56,7 +60,7 @@ function App() {
                   accusantium placeat odit corrupti ipsum!
                 </p>
                 <section className="project__technologies">
-                  <p className="project__technologies--text">React JS, MongoDB</p>
+                  <p className="project__technologies--text">React JS, MongoDB<FontAwesomeIcon icon={faGlobe}/><FontAwesomeIcon icon={faGithub} /></p>
                 </section>
               </section>
               <section className="preview__autor--infoautor infoAutor">
