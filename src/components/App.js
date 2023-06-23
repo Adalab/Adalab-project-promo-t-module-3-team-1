@@ -7,6 +7,7 @@ import user from '../images/user.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
                 accusantium placeat odit corrupti ipsum!
               </p>
               <section className="project__technologies">
-                <p className="project__technologies--text">React JS, MongoDB<FontAwesomeIcon icon={faGlobe} /></p>
+                <p className="project__technologies--text">React JS, MongoDB<FontAwesomeIcon icon={faGlobe}/><FontAwesomeIcon icon={faGithub} /></p>
               </section>
             </section>
 
