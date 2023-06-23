@@ -1,6 +1,7 @@
 .preview {
-    width: 60%;
+   
     padding: 20px;
+    
     &__image {
       object-fit: cover;
       width: 100%;
@@ -14,7 +15,7 @@
       background-color: $white;
       color: $dark-grey;
       width: 90%;
-      height: 50%;
+      
       transform: translateY(-100px);
       margin: auto;
       border-radius: 20px;
