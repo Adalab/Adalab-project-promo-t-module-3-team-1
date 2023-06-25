@@ -3,7 +3,7 @@ import cover from '../images/cover.jpeg';
 /*import cover2 from '../images/cover_2.jpeg';*/
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
@@ -21,6 +21,14 @@ let data = {
   ,authImg:''
 }
 function App() {
+  useEffect(() => {
+    fetch('https://dev.adalab.es/api/projectCard')
+      .then((response) => response.json())
+      .then((data) => {
+        
+      });
+  }, []);
+
   const handleClickCreateCard = (ev) => {
     //ev.preventDefault();
     console.log('Has clicado el boton');
