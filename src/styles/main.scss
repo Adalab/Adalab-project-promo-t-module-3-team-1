@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .main {
     display: flex;
     padding-top: 50px;
@@ -200,3 +201,13 @@
   .hidden {
     display: none;
   }
+=======
+@import 'core/variables.scss';
+@import 'core/reset.scss';
+@import 'core/mixins.scss';
+@import 'layout/hero';
+@import 'layout/header.scss';
+@import 'layout/page.scss';
+@import 'layout/preview.scss';
+@import 'layout/form.scss';
+>>>>>>> dev
