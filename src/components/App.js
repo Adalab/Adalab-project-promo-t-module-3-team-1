@@ -21,14 +21,6 @@ let data = {
   ,authImg:''
 }
 function App() {
-  useEffect(() => {
-    fetch('https://dev.adalab.es/api/projectCard')
-      .then((response) => response.json())
-      .then((data) => {
-        
-      });
-  }, []);
-
   const handleClickCreateCard = (ev) => {
     //ev.preventDefault();
     console.log('Has clicado el boton');
@@ -42,14 +34,14 @@ function App() {
     <div className="container">
       <header className="header">
         <p className="header__text"><FontAwesomeIcon icon={faLaptopCode} size="2xl" />Proyectos Molones</p>
-        <img src={logo} alt="logo Adalab" />    
+        <img className='header__logo' src={logo} alt="logo Adalab" />    
       </header>
 
       <main className="main">
         <section className='main__hero'>
-          <h1>Proyectos Molones</h1>
-          <p>Escaparate en línea para recoger ideas a través de la tecnología.</p>
-          <button>VER PROYECTOS</button>
+          <h1 className='main__hero--title'>Proyectos Molones</h1>
+          <p className='main__hero--subtitle'>Escaparate en línea para recoger ideas a través de la tecnología.</p>
+          <button className='main__hero--button'>VER PROYECTOS</button>
         </section>
         
         <div className='main__section'>
@@ -68,7 +60,9 @@ function App() {
                   accusantium placeat odit corrupti ipsum!
                 </p>
                 <section className="project__technologies">
-                  <p className="project__technologies--text">React JS, MongoDB<FontAwesomeIcon icon={faGlobe}/><FontAwesomeIcon icon={faGithub} /></p>
+                  <p className="project__technologies--text">React JS, MongoDB</p>
+                  <p className="project__technologies--icon"><FontAwesomeIcon icon={faGlobe}/></p>
+                  <p className="project__technologies--icon"><FontAwesomeIcon icon={faGithub}/></p>
                 </section>
               </section>
               <section className="preview__autor--infoautor infoAutor">
@@ -181,7 +175,7 @@ function App() {
         </div>
       </main>
       <footer className="main"> 
-         <img src={logo} alt="logo Adalab" />  
+         <img className='header__logo' src={logo} alt="logo Adalab" />  
       </footer>
     </div>
   );
