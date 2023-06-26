@@ -4,7 +4,7 @@ import cover from '../images/cover.jpeg';
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
 import callToApi from '../services/api';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
@@ -20,58 +20,99 @@ function App() {
     autor: '',
     job: '',
     image: '',
-    photo: ''
+    photo: '',
   });
+  const [url, setUrl] = useState('');
   const handleClickCreateCard = (ev) => {
     //ev.preventDefault();
     console.log('Has clicado el boton');
-  }
+  };
   const handleInputs = (ev) => {
-    setData({...data,[ev.target.id]: ev.target.value});
-  }
+    setData({ ...data, [ev.target.id]: ev.target.value });
+  };
+  useEffect(() => {
+    callToApi().then((response) => {
+      setUrl(response);
+    });
+  });
   return (
     <div className="container">
       <header className="header">
-        <p className="header__text"><FontAwesomeIcon icon={faLaptopCode} size="2xl" />Proyectos Molones</p>
-        <img className='header__logo' src={logo} alt="logo Adalab" />    
+        <p className="header__text">
+          <FontAwesomeIcon icon={faLaptopCode} size="2xl" />
+          Proyectos Molones
+        </p>
+        <img className="header__logo" src={logo} alt="logo Adalab" />
       </header>
 
       <main className="main">
-        <section className='main__hero'>
-          <h1 className='main__hero--title'>Proyectos Molones</h1>
-          <p className='main__hero--subtitle'>Escaparate en línea para recoger ideas a través de la tecnología.</p>
-          <button className='main__hero--button'>VER PROYECTOS</button>
+        <section className="main__hero">
+          <h1 className="main__hero--title">Proyectos Molones</h1>
+          <p className="main__hero--subtitle">
+            Escaparate en línea para recoger ideas a través de la tecnología.
+          </p>
+          <button className="main__hero--button">VER PROYECTOS</button>
         </section>
-        
-        <div className='main__section'>
+
+        <div className="main__section">
           <section className="preview">
             <img className="preview__image" src={cover} alt="#" />
             <section className="preview__autor">
               <section className="preview__autor--infoproject project">
                 <p className="project__subtitle">Personal Project Card</p>
                 <hr className="project__line" />
-                <h2 className="project__title">{data.name || 'Elegante Workspace'} </h2>
-                <p className="project__slogan">{data.slogan || 'Diseños Exclusivos'}</p>
+                <h2 className="project__title">
+                  {data.name || 'Elegante Workspace'}{' '}
+                </h2>
+                <p className="project__slogan">
+                  {data.slogan || 'Diseños Exclusivos'}
+                </p>
                 <p className="project__desc">
-                  {data.desc || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod ullamcorper orci, eget ultricies tellus auctor ac. Duis dignissim lorem eget imperdiet pharetra. Proin consectetur purus non nisi tristique eleifend. Nam sed gravida est.'}
+                  {data.desc ||
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod ullamcorper orci, eget ultricies tellus auctor ac. Duis dignissim lorem eget imperdiet pharetra. Proin consectetur purus non nisi tristique eleifend. Nam sed gravida est.'}
                 </p>
                 <section className="project__technologies">
-                  <p className="project__technologies--text">{data.technologies || 'React JS, MongoDB'}</p>
-                  <p className="project__technologies--icon"><FontAwesomeIcon icon={faGlobe}/></p>
-                  <p className="project__technologies--icon"><FontAwesomeIcon icon={faGithub}/></p>
+                  <p className="project__technologies--text">
+                    {data.technologies || 'React JS, MongoDB'}
+                  </p>
+
+                  <div className="project__technologies--icon">
+                    <a
+                      href={data.demo}
+                      rel="noreferrer"
+                      target="_blank"
+                      className="icon"
+                    >
+                      <FontAwesomeIcon icon={faGlobe} />
+                    </a>
+                    <a
+                      href={data.repo}
+                      rel="noreferrer"
+                      target="_blank"
+                      className="icon"
+                    >
+                      <FontAwesomeIcon icon={faGithub} />
+                    </a>
+                  </div>
                 </section>
               </section>
               <section className="preview__autor--infoautor infoAutor">
                 <img className="infoAutor__image" src={user} alt="#" />
-                <p className="infoAutor__job">{data.job || 'Full Stack Developer'}</p>
-                <p className="infoAutor__name">{data.author || 'Emmelie Björklund'}</p>
+                <p className="infoAutor__job">
+                  {data.job || 'Full Stack Developer'}
+                </p>
+                <p className="infoAutor__name">
+                  {data.author || 'Emmelie Björklund'}
+                </p>
               </section>
             </section>
           </section>
           <section className="form">
             <h2 className="form__title">Información</h2>
             <section className="form__askinfo">
-              <p className="form__askinfo--subtitle">Cuéntanos sobre el proyecto</p>
+              <p className="form__askinfo--subtitle">
+                Cuéntanos sobre el proyecto
+              </p>
               <hr className="form__askinfo--line" />
             </section>
             <fieldset className="form__project">
@@ -131,7 +172,9 @@ function App() {
               ></textarea>
             </fieldset>
             <section className="form__askinfo">
-              <p className="form__askinfo--subtitle">Cuéntanos sobre la autora</p>
+              <p className="form__askinfo--subtitle">
+                Cuéntanos sobre la autora
+              </p>
               <hr className="form__askinfo--line" />
             </section>
             <fieldset className="form__autor">
@@ -155,23 +198,32 @@ function App() {
               />
             </fieldset>
             <section className="form__buttons-img">
-              <button className="form__buttons-img--btn">Subir foto de proyecto</button>
-              <button className="form__buttons-img--btn">Subir foto de autora</button>
+              <button className="form__buttons-img--btn">
+                Subir foto de proyecto
+              </button>
+              <button className="form__buttons-img--btn">
+                Subir foto de autora
+              </button>
             </section>
             <section className="form__buttons-img">
-              <button className="form__buttons-img--btnlarge" onClick={handleClickCreateCard}>
+              <button
+                className="form__buttons-img--btnlarge"
+                onClick={handleClickCreateCard}
+              >
                 Crear Tarjeta
               </button>
             </section>
             <section className="form__card hidden">
               <span className=""> La tarjeta ha sido creada: </span>
-              <a href="./#" className="" target="_blank" rel="noreferrer"> </a>
+              {/*<a href={url} className="" target="_blank" rel="noreferrer">
+              {url}
+                  </a>*/}
             </section>
           </section>
         </div>
       </main>
-      <footer className="main"> 
-         <img className='header__logo' src={logo} alt="logo Adalab" />  
+      <footer className="main">
+        <img className="header__logo" src={logo} alt="logo Adalab" />
       </footer>
     </div>
   );
