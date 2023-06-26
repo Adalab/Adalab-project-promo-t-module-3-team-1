@@ -8,27 +8,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-let data = {
-  name:''
-  ,slogan:''
-  ,repo:''
-  ,demo:''
-  ,technologies:''
-  ,desc:''
-  ,author:''
-  ,job:''
-  ,projImg:''
-  ,authImg:''
-}
 function App() {
+  const [data, setData] = useState({
+    name: '',
+    slogan: '',
+    technologies: '',
+    demo: '',
+    repo: '',
+    desc: '',
+    autor: '',
+    job: '',
+    image: '',
+    photo: ''
+  });
   const handleClickCreateCard = (ev) => {
     //ev.preventDefault();
     console.log('Has clicado el boton');
   }
-  let [input,setInputs ] = useState (data);
   const handleInputs = (ev) => {
-    const inputId = ev.target.id;
-    setInputs({...input,[inputId]:ev.target.value});
+    setData({...data,[ev.target.id]: ev.target.value});
   }
   return (
     <div className="container">
@@ -52,23 +50,20 @@ function App() {
                 <p className="project__subtitle">Personal Project Card</p>
                 <hr className="project__line" />
                 <h2 className="project__title">{data.name || 'Elegante Workspace'} </h2>
-                <p className="project__slogan">Diseños Exclusivos</p>
+                <p className="project__slogan">{data.slogan || 'Diseños Exclusivos'}</p>
                 <p className="project__desc">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Libero, delectus? Voluptates at hic aliquam porro ad suscipit
-                  harum laboriosam saepe earum doloribus aperiam, ullam culpa
-                  accusantium placeat odit corrupti ipsum!
+                  {data.desc || 'Lorem'}
                 </p>
                 <section className="project__technologies">
-                  <p className="project__technologies--text">React JS, MongoDB</p>
+                  <p className="project__technologies--text">{data.technologies || 'React JS, MongoDB'}</p>
                   <p className="project__technologies--icon"><FontAwesomeIcon icon={faGlobe}/></p>
                   <p className="project__technologies--icon"><FontAwesomeIcon icon={faGithub}/></p>
                 </section>
               </section>
               <section className="preview__autor--infoautor infoAutor">
                 <img className="infoAutor__image" src={user} alt="#" />
-                <p className="infoAutor__job">Full Stack Developer</p>
-                <p className="infoAutor__name">Emmelie Björklund</p>
+                <p className="infoAutor__job">{data.job || 'Full Stack Developer'}</p>
+                <p className="infoAutor__name">{data.author || 'Emmelie Björklund'}</p>
               </section>
             </section>
           </section>
@@ -86,7 +81,7 @@ function App() {
                 name="name"
                 id="name"
                 onInput={handleInputs}
-                value={input.name}
+                value={data.name}
               />
               <input
                 className="form__project--input"
@@ -95,7 +90,7 @@ function App() {
                 id="slogan"
                 onInput={handleInputs}
                 placeholder="Slogan"
-                value={input.slogan}
+                value={data.slogan}
               />
               <input
                 className="form__project--input"
@@ -104,7 +99,7 @@ function App() {
                 id="repo"
                 placeholder="Repo"
                 onInput={handleInputs}
-                value={input.repo}
+                value={data.repo}
               />
               <input
                 className="form__project--input"
@@ -113,7 +108,7 @@ function App() {
                 name="demo"
                 id="demo"
                 onInput={handleInputs}
-                value={input.demo}
+                value={data.demo}
               />
               <input
                 className="form__project--input"
@@ -122,7 +117,7 @@ function App() {
                 name="technologies"
                 id="technologies"
                 onInput={handleInputs}
-                value={input.technologies}
+                value={data.technologies}
               />
               <textarea
                 className="form__project--textarea"
@@ -131,7 +126,7 @@ function App() {
                 name="desc"
                 id="desc"
                 onInput={handleInputs}
-                value={input.desc}
+                value={data.desc}
               ></textarea>
             </fieldset>
             <section className="form__askinfo">
@@ -146,7 +141,7 @@ function App() {
                 name="autor"
                 id="author"
                 onInput={handleInputs}
-                value={input.author}
+                value={data.author}
               />
               <input
                 className="form__autor--input"
@@ -155,7 +150,7 @@ function App() {
                 name="job"
                 id="job"
                 onInput={handleInputs}
-                value={input.job}
+                value={data.job}
               />
             </fieldset>
             <section className="form__buttons-img">
@@ -167,7 +162,7 @@ function App() {
                 Crear Tarjeta
               </button>
             </section>
-            <section className="form__card">
+            <section className="form__card hidden">
               <span className=""> La tarjeta ha sido creada: </span>
               <a href="./#" className="" target="_blank" rel="noreferrer"> </a>
             </section>
