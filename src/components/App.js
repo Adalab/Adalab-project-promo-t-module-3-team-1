@@ -3,6 +3,7 @@ import cover from '../images/cover.jpeg';
 /*import cover2 from '../images/cover_2.jpeg';*/
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
+import callToApi from '../services/api';
 import {useEffect, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
