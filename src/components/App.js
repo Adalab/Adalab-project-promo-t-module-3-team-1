@@ -52,7 +52,7 @@ function App() {
                 <h2 className="project__title">{data.name || 'Elegante Workspace'} </h2>
                 <p className="project__slogan">{data.slogan || 'Diseños Exclusivos'}</p>
                 <p className="project__desc">
-                  {data.desc || 'Lorem'}
+                  {data.desc || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod ullamcorper orci, eget ultricies tellus auctor ac. Duis dignissim lorem eget imperdiet pharetra. Proin consectetur purus non nisi tristique eleifend. Nam sed gravida est.'}
                 </p>
                 <section className="project__technologies">
                   <p className="project__technologies--text">{data.technologies || 'React JS, MongoDB'}</p>
