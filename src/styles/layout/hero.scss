@@ -1,0 +1,30 @@
+.main__hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    &--subtitle{
+        text-align: center;
+    
+    }
+    &--button{
+            padding: 5px 10px;
+            background-color: white;
+            border-radius: 15px;
+    }
+}
+@media screen and (min-width:760px){
+    .main__hero{
+        &--title{
+            font-size: 45px;
+            font-weight: bold;
+        }
+        &--subtitle{
+            font-size: 20px;
+        }
+        &--button{
+            font-size: 17px;
+        }
+    }  
+}
