@@ -1,5 +1,12 @@
 import '../styles/layout/form.scss';
-const Form = () => {
+import GetAvatar from './GetAvatar';
+const Form = ({handleInputs, data, serverResponse, handleClickCreateCard, handleChangeForm}) => {
+  const handleImage = (userImage) => {
+    handleChangeForm('image', userImage);
+  }
+  const handlePhoto = (userImage) => {
+    handleChangeForm('photo', userImage);
+  }
   return (
     <section className="form">
       <h2 className="form__title">Información</h2>
@@ -87,11 +94,16 @@ const Form = () => {
           value={data.job}
         />
       </fieldset>
-      <section className="form__buttons-img">
-        <button className="form__buttons-img--btn">
-          Subir foto de proyecto
-        </button>
-        <button className="form__buttons-img--btn">Subir foto de autora</button>
+      <section className="buttons-img">
+     
+        <GetAvatar
+        text="Subir foto de proyecto"
+        avatar={data.image}
+        updateAvatar={handleImage} />
+        <GetAvatar
+        text="Subir foto de autora"
+        avatar={data.photo}
+        updateAvatar={handlePhoto} />
       </section>
       <section className="form__buttons-img">
         <button

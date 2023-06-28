@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cover from '../images/cover.jpeg';
 import user from '../images/user.jpeg';
 
-const Preview = () => {
+const Preview = ({data}) => {
   return (
     <section className="preview">
-      <img className="preview__image" src={cover} alt="#" />
+      <img className="preview__image" src={data.image} alt="#" />
       <section className="preview__autor">
         <section className="preview__autor--infoproject project">
           <p className="project__subtitle">Personal Project Card</p>
@@ -49,7 +49,7 @@ const Preview = () => {
           </section>
         </section>
         <section className="preview__autor--infoautor infoAutor">
-          <img className="infoAutor__image" src={user} alt="#" />
+          <img className="infoAutor__image" src={data.photo} alt="#" />
           <p className="infoAutor__job">{data.job || 'Full Stack Developer'}</p>
           <p className="infoAutor__name">{data.autor || 'Emmelie Björklund'}</p>
         </section>
