@@ -1,9 +1,11 @@
 import '../styles/main.scss';
 import cover from '../images/cover.jpeg';
+import programación from '../images/programacion.jpeg';
 /*import cover2 from '../images/cover_2.jpeg';*/
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
-import callToApi from '../services/api';
+import sendToApi from '../services/api';
+import ls from '../services/LocalStorage'
 import {useEffect, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
@@ -25,6 +27,7 @@ function App() {
   const handleClickCreateCard = (ev) => {
     //ev.preventDefault();
     console.log('Has clicado el boton');
+    sendToApi()
   }
   const handleInputs = (ev) => {
     setData({...data,[ev.target.id]: ev.target.value});
@@ -45,7 +48,7 @@ function App() {
         
         <div className='main__section'>
           <section className="preview">
-            <img className="preview__image" src={cover} alt="#" />
+            <img className="preview__image" src= {cover} alt="#" />
             <section className="preview__autor">
               <section className="preview__autor--infoproject project">
                 <p className="project__subtitle">Personal Project Card</p>
@@ -57,8 +60,8 @@ function App() {
                 </p>
                 <section className="project__technologies">
                   <p className="project__technologies--text">{data.technologies || 'React JS, MongoDB'}</p>
-                  <p className="project__technologies--icon"><FontAwesomeIcon icon={faGlobe}/></p>
-                  <p className="project__technologies--icon"><FontAwesomeIcon icon={faGithub}/></p>
+                  <a href={data.demo} title='Visitar demo del proyecto'><p className="project__technologies--icon"><FontAwesomeIcon icon={faGlobe}/></p></a>
+                  <a href={data.repo} title='Visitar repositorio del proyecto'><p className="project__technologies--icon"><FontAwesomeIcon icon={faGithub}/></p></a>
                 </section>
               </section>
               <section className="preview__autor--infoautor infoAutor">
@@ -155,7 +158,7 @@ function App() {
               />
             </fieldset>
             <section className="form__buttons-img">
-              <button className="form__buttons-img--btn">Subir foto de proyecto</button>
+              <button type='file' className="form__buttons-img--btn">Subir foto de proyecto</button>
               <button className="form__buttons-img--btn">Subir foto de autora</button>
             </section>
             <section className="form__buttons-img">
