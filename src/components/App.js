@@ -1,5 +1,3 @@
-import '../styles/main.scss';
-import cover from '../images/cover.jpeg';
 import programación from '../images/programacion.jpeg';
 /*import cover2 from '../images/cover_2.jpeg';*/
 import logo from '../images/logo-adalab.png';
@@ -7,11 +5,19 @@ import user from '../images/user.jpeg';
 import sendToApi from '../services/api';
 import ls from '../services/LocalStorage';
 import {useEffect, useState} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import '../styles/core/reset.scss';
+import '../styles/core/mixins.scss';
+import '../styles/layout/page.scss';
+import Header from './Header';
+import Preview from './Preview';
+import Hero from './Hero';
+import Form from './Form';
+import Footer from './Footer';
+import GetAvatar from './GetAvatar';
+
+
 function App() {
+  const [serverResponse, setServerResponse] = useState({});
   const [data, setData] = useState({
     name: '',
     slogan: '',
@@ -21,8 +27,9 @@ function App() {
     desc: '',
     autor: '',
     job: '',
-    image: '',
-    photo: '',
+    image: 'https://www.itmplatform.com/wp-content/uploads/33664005_m.jpg',
+    photo:
+      'https://genweb.upc.edu/ca/documentacio/cursos/creacio-i-personalitzacio-de-plantilles/img/user.jpg',
   });
   const [contactList, setContactList] = useState(ls.get('contacts', []));
   useEffect(() => {
@@ -35,208 +42,31 @@ function App() {
     }
   }, []);
   const handleClickCreateCard = (ev) => {
-    //ev.preventDefault();
-    console.log('Has clicado el boton');
-    sendToApi()
-  }
+    ev.preventDefault();
+    callToApi(data).then((result) => {
+      setServerResponse(result);
+      console.log(result.success);
+    });
+  };
   const handleInputs = (ev) => {
     setData({ ...data, [ev.target.id]: ev.target.value });
   };
-  useEffect(() => {
-    callToApi().then((response) => {
-      setUrl(response);
-    });
-  });
+  const handleChangeForm = (propName, value) => {
+    const cloneData = { ...data, [propName]: value};
+    setData(cloneData);
+  }
+
   return (
     <div className="container">
-      <header className="header">
-        <p className="header__text">
-          <FontAwesomeIcon icon={faLaptopCode} size="2xl" />
-          Proyectos Molones
-        </p>
-        <img className="header__logo" src={logo} alt="logo Adalab" />
-      </header>
-
+      <Header></Header>
       <main className="main">
-        <section className="main__hero">
-          <h1 className="main__hero--title">Proyectos Molones</h1>
-          <p className="main__hero--subtitle">
-            Escaparate en línea para recoger ideas a través de la tecnología.
-          </p>
-          <button className="main__hero--button">VER PROYECTOS</button>
-        </section>
-
+        <Hero></Hero>
         <div className="main__section">
-          <section className="preview">
-            <img className="preview__image" src= {cover} alt="#" />
-            <section className="preview__autor">
-              <section className="preview__autor--infoproject project">
-                <p className="project__subtitle">Personal Project Card</p>
-                <hr className="project__line" />
-                <h2 className="project__title">
-                  {data.name || 'Elegante Workspace'}{' '}
-                </h2>
-                <p className="project__slogan">
-                  {data.slogan || 'Diseños Exclusivos'}
-                </p>
-                <p className="project__desc">
-                  {data.desc ||
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod ullamcorper orci, eget ultricies tellus auctor ac. Duis dignissim lorem eget imperdiet pharetra. Proin consectetur purus non nisi tristique eleifend. Nam sed gravida est.'}
-                </p>
-                <section className="project__technologies">
-                  <p className="project__technologies--text">
-                    {data.technologies || 'React JS, MongoDB'}
-                  </p>
-
-                  <div className="project__technologies--icon">
-                    <a
-                      href={data.demo}
-                      rel="noreferrer"
-                      target="_blank"
-                      className="icon"
-                    >
-                      <FontAwesomeIcon icon={faGlobe} />
-                    </a>
-                    <a
-                      href={data.repo}
-                      rel="noreferrer"
-                      target="_blank"
-                      className="icon"
-                    >
-                      <FontAwesomeIcon icon={faGithub} />
-                    </a>
-                  </div>
-                </section>
-              </section>
-              <section className="preview__autor--infoautor infoAutor">
-                <img className="infoAutor__image" src={user} alt="#" />
-                <p className="infoAutor__job">
-                  {data.job || 'Full Stack Developer'}
-                </p>
-                <p className="infoAutor__name">
-                  {data.author || 'Emmelie Björklund'}
-                </p>
-              </section>
-            </section>
-          </section>
-          <section className="form">
-            <h2 className="form__title">Información</h2>
-            <section className="form__askinfo">
-              <p className="form__askinfo--subtitle">
-                Cuéntanos sobre el proyecto
-              </p>
-              <hr className="form__askinfo--line" />
-            </section>
-            <fieldset className="form__project">
-              <input
-                className="form__project--input"
-                type="text"
-                placeholder="Nombre del proyecto"
-                name="name"
-                id="name"
-                onInput={handleInputs}
-                value={data.name}
-              />
-              <input
-                className="form__project--input"
-                type="text"
-                name="slogan"
-                id="slogan"
-                onInput={handleInputs}
-                placeholder="Slogan"
-                value={data.slogan}
-              />
-              <input
-                className="form__project--input"
-                type="text"
-                name="repo"
-                id="repo"
-                placeholder="Repo"
-                onInput={handleInputs}
-                value={data.repo}
-              />
-              <input
-                className="form__project--input"
-                type="text"
-                placeholder="Demo"
-                name="demo"
-                id="demo"
-                onInput={handleInputs}
-                value={data.demo}
-              />
-              <input
-                className="form__project--input"
-                type="text"
-                placeholder="Tecnologías"
-                name="technologies"
-                id="technologies"
-                onInput={handleInputs}
-                value={data.technologies}
-              />
-              <textarea
-                className="form__project--textarea"
-                type="text"
-                placeholder="Descripción"
-                name="desc"
-                id="desc"
-                onInput={handleInputs}
-                value={data.desc}
-              ></textarea>
-            </fieldset>
-            <section className="form__askinfo">
-              <p className="form__askinfo--subtitle">
-                Cuéntanos sobre la autora
-              </p>
-              <hr className="form__askinfo--line" />
-            </section>
-            <fieldset className="form__autor">
-              <input
-                className="form__autor--input"
-                type="text"
-                placeholder="Nombre"
-                name="autor"
-                id="author"
-                onInput={handleInputs}
-                value={data.author}
-              />
-              <input
-                className="form__autor--input"
-                type="text"
-                placeholder="Trabajo"
-                name="job"
-                id="job"
-                onInput={handleInputs}
-                value={data.job}
-              />
-            </fieldset>
-            <section className="form__buttons-img">
-              <button className="form__buttons-img--btn">
-                Subir foto de proyecto
-              </button>
-              <button className="form__buttons-img--btn">
-                Subir foto de autora
-              </button>
-            </section>
-            <section className="form__buttons-img">
-              <button
-                className="form__buttons-img--btnlarge"
-                onClick={handleClickCreateCard}
-              >
-                Crear Tarjeta
-              </button>
-            </section>
-            <section className="form__card hidden">
-              <span className=""> La tarjeta ha sido creada: </span>
-              {/*<a href={url} className="" target="_blank" rel="noreferrer">
-              {url}
-                  </a>*/}
-            </section>
-          </section>
+          <Preview data={data}></Preview>
+          <Form handleInputs={handleInputs} data={data} handleClickCreateCard={handleClickCreateCard} serverResponse={serverResponse} handleChangeForm={handleChangeForm}></Form>
         </div>
       </main>
-      <footer className="main">
-        <img className="header__logo" src={logo} alt="logo Adalab" />
-      </footer>
+      <Footer></Footer>
     </div>
   );
 }

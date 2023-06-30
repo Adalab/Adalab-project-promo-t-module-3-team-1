@@ -1,9 +1,12 @@
+@import '../core/variables.scss';
+@import '../core/mixins.scss';
+
 .container {
   background-color: $dark;
   //height: 130vh;
   padding: 20px;
   width: 100%;
-
+  font-family: $primary-text;
   @media tablet {}
 }
 
