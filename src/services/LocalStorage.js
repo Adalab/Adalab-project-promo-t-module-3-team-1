@@ -1,4 +1,3 @@
-
 const get = (key, defaultValue) => {
     const localStorageData = localStorage.getItem(key);
     if (localStorageData === null) {

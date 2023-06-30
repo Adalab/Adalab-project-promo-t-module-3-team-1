@@ -5,7 +5,7 @@ import programación from '../images/programacion.jpeg';
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
 import sendToApi from '../services/api';
-import ls from '../services/LocalStorage'
+import ls from '../services/LocalStorage';
 import {useEffect, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLaptopCode } from '@fortawesome/free-solid-svg-icons';
@@ -24,6 +24,16 @@ function App() {
     image: '',
     photo: ''
   });
+  const [contactList, setContactList] = useState(ls.get('contacts', []));
+  useEffect(() => {
+    if (ls.get('contacts', null) === null) {
+      sendToApi().then((cleanData) => {
+        setContactList(cleanData);
+
+        ls.set('contacts', cleanData);
+      });
+    }
+  }, []);
   const handleClickCreateCard = (ev) => {
     //ev.preventDefault();
     console.log('Has clicado el boton');
