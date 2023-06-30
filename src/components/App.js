@@ -43,7 +43,7 @@ function App() {
   }, []);
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
-    callToApi(data).then((result) => {
+    sendToApi(data).then((result) => {
       setServerResponse(result);
       console.log(result.success);
     });
