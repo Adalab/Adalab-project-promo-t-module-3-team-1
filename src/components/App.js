@@ -4,7 +4,7 @@ import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
 import sendToApi from '../services/api';
 import ls from '../services/LocalStorage';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/core/reset.scss';
 import '../styles/core/mixins.scss';
 import '../styles/layout/page.scss';
@@ -15,32 +15,26 @@ import Form from './Form';
 import Footer from './Footer';
 import GetAvatar from './GetAvatar';
 
-
 function App() {
   const [serverResponse, setServerResponse] = useState({});
-  const [data, setData] = useState({
-    name: '',
-    slogan: '',
-    technologies: '',
-    demo: '',
-    repo: '',
-    desc: '',
-    autor: '',
-    job: '',
-    image: 'https://www.itmplatform.com/wp-content/uploads/33664005_m.jpg',
-    photo:
-      'https://genweb.upc.edu/ca/documentacio/cursos/creacio-i-personalitzacio-de-plantilles/img/user.jpg',
-  });
-  const [contactList, setContactList] = useState(ls.get('contacts', []));
-  useEffect(() => {
-    if (ls.get('contacts', null) === null) {
-      sendToApi().then((cleanData) => {
-        setContactList(cleanData);
+  const [data, setData] = useState(
+    ls.get('objData', {
+      name: '',
+      slogan: '',
+      technologies: '',
+      demo: '',
+      repo: '',
+      desc: '',
+      autor: '',
+      job: '',
+      image: '',
+      photo: '',
+    })
+  );
 
-        ls.set('contacts', cleanData);
-      });
-    }
-  }, []);
+  useEffect(() => {
+    ls.set('objData', data);
+  }, [data]);
   const handleClickCreateCard = (ev) => {
     ev.preventDefault();
     sendToApi(data).then((result) => {
@@ -52,9 +46,9 @@ function App() {
     setData({ ...data, [ev.target.id]: ev.target.value });
   };
   const handleChangeForm = (propName, value) => {
-    const cloneData = { ...data, [propName]: value};
+    const cloneData = { ...data, [propName]: value };
     setData(cloneData);
-  }
+  };
 
   return (
     <div className="container">
@@ -63,7 +57,13 @@ function App() {
         <Hero></Hero>
         <div className="main__section">
           <Preview data={data}></Preview>
-          <Form handleInputs={handleInputs} data={data} handleClickCreateCard={handleClickCreateCard} serverResponse={serverResponse} handleChangeForm={handleChangeForm}></Form>
+          <Form
+            handleInputs={handleInputs}
+            data={data}
+            handleClickCreateCard={handleClickCreateCard}
+            serverResponse={serverResponse}
+            handleChangeForm={handleChangeForm}
+          ></Form>
         </div>
       </main>
       <Footer></Footer>
