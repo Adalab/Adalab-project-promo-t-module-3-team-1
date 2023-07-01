@@ -1,12 +1,18 @@
 import '../styles/layout/form.scss';
 import GetAvatar from './GetAvatar';
-const Form = ({handleInputs, data, serverResponse, handleClickCreateCard, handleChangeForm}) => {
+const Form = ({
+  handleInputs,
+  data,
+  serverResponse,
+  handleClickCreateCard,
+  handleChangeForm,
+}) => {
   const handleImage = (userImage) => {
     handleChangeForm('image', userImage);
-  }
+  };
   const handlePhoto = (userImage) => {
     handleChangeForm('photo', userImage);
-  }
+  };
   return (
     <section className="form">
       <h2 className="form__title">Información</h2>
@@ -95,15 +101,16 @@ const Form = ({handleInputs, data, serverResponse, handleClickCreateCard, handle
         />
       </fieldset>
       <section className="buttons-img">
-     
         <GetAvatar
-        text="Subir foto de proyecto"
-        avatar={data.image}
-        updateAvatar={handleImage} />
+          text="Subir foto de proyecto"
+          avatar={data.photo}
+          updateAvatar={handlePhoto}
+        />
         <GetAvatar
-        text="Subir foto de autora"
-        avatar={data.photo}
-        updateAvatar={handlePhoto} />
+          text="Subir foto de autora"
+          avatar={data.image}
+          updateAvatar={handleImage}
+        />
       </section>
       <section className="form__buttons-img">
         <button
