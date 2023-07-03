@@ -17,7 +17,7 @@ const Landing = () => {
         </p>
         <p className="question2">
           Estás interesado en conocer a las nuevas promesas y su trabajo? Visita
-          neustra galeria de proyectos y escoge tu favorito!!
+          nuestra galeria de proyectos y escoge tu favorito!!
         </p>
       </div>
       <Link to="/Inicio">
