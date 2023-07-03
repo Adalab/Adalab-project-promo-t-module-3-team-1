@@ -1,5 +1,6 @@
 import programación from '../images/programacion.jpeg';
 /*import cover2 from '../images/cover_2.jpeg';*/
+import {Route, Routes} from 'react-router-dom';
 import logo from '../images/logo-adalab.png';
 import user from '../images/user.jpeg';
 import sendToApi from '../services/api';
@@ -8,12 +9,14 @@ import { useEffect, useState } from 'react';
 import '../styles/core/reset.scss';
 import '../styles/core/mixins.scss';
 import '../styles/layout/page.scss';
+import Landing from './Landing';
 import Header from './Header';
 import Preview from './Preview';
 import Hero from './Hero';
 import Form from './Form';
 import Footer from './Footer';
 import GetAvatar from './GetAvatar';
+import Archivo from './Archivo';
 
 function App() {
   const [serverResponse, setServerResponse] = useState({});
@@ -54,17 +57,35 @@ function App() {
     <div className="container">
       <Header></Header>
       <main className="main">
-        <Hero></Hero>
-        <div className="main__section">
-          <Preview data={data}></Preview>
-          <Form
-            handleInputs={handleInputs}
-            data={data}
-            handleClickCreateCard={handleClickCreateCard}
-            serverResponse={serverResponse}
-            handleChangeForm={handleChangeForm}
-          ></Form>
-        </div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Landing/>
+            }/>
+          <Route
+            path="/Inicio" 
+            element={
+              <>
+                <Hero></Hero>
+                <div className="main__section">
+                  <Preview data={data}></Preview>
+                  <Form
+                    handleInputs={handleInputs}
+                    data={data}
+                    handleClickCreateCard={handleClickCreateCard}
+                    serverResponse={serverResponse}
+                    handleChangeForm={handleChangeForm}
+                  ></Form>
+                </div>
+              </>
+            }/>
+            <Route
+            path='/Archivo'
+            element={
+              <Archivo/>
+            }/>
+        </Routes>
       </main>
       <Footer></Footer>
     </div>

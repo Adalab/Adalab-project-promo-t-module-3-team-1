@@ -7,7 +7,7 @@ const Header = () => {
     <header className="header">
       <p className="header__text">
         <FontAwesomeIcon icon={faLaptopCode} size="2xl" />
-        Proyectos Molones
+        Programadores Junior
       </p>
       <img className="header__logo" src={logo} alt="logo Adalab" />
     </header>

@@ -77,7 +77,7 @@ const Form = ({
         ></textarea>
       </fieldset>
       <section className="form__askinfo">
-        <p className="form__askinfo--subtitle">Cuéntanos sobre la autora</p>
+        <p className="form__askinfo--subtitle">Cuéntanos sobre ti</p>
         <hr className="form__askinfo--line" />
       </section>
       <fieldset className="form__autor">

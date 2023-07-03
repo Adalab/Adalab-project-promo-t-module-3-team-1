@@ -1,16 +1,20 @@
 @import '../core/variables.scss';
 @import '../core/mixins.scss';
 .form{
-    background-color: $dark;
-    padding: 0px 60px;
-    width: 100%;
-    @include tablet() {
+    background-color: $light-lilac;
+    width: 80vw;
+    padding: 10px;
+    @media screen and (min-width:764px){
       padding-top: 20px;
+      width: 80vw;
+    }
+    @media screen and (min-width: 1024px){
+      width: 38vw;
     }
     &__title{
       color: $white;
       text-align: center;
-      font-size: 40px;
+      font-size: 37px;
     }
     &__askinfo{
       padding: 20px;
@@ -38,7 +42,7 @@
       gap: 10px;
       border: none;
       &--input{
-        background-color: $dark;
+        background-color: $dark-lilac;
         border-color: $white;
         border-radius: 40px;
         height: 42.72px;
@@ -47,7 +51,7 @@
         padding-top: 5px;
       }
       &--textarea{
-        background-color: $dark;
+        background-color: $dark-lilac;
         border-color: $white;
         border-radius: 30px;
         height: 42.72px;
@@ -71,7 +75,7 @@
       gap: 10px;
       border: none;
       &--input{
-        background-color: $dark;
+        background-color: $dark-lilac;
         border-color: $white;
         border-radius: 40px;
         height: 42.72px;
@@ -105,7 +109,7 @@
         text-align: center;
         border: none;
         height: 43px;
-        background: linear-gradient(90deg, $dark-lilac -1.57%, $light-lilac 98.43%);
+        background: linear-gradient(90deg, $dark -1.57%, $dark-lilac 98.43%);
         border-radius: 40px;
       }
       &--btnlarge{

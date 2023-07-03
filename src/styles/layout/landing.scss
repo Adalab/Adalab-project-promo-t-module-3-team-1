@@ -1,0 +1,33 @@
+@import '../core/variables.scss';
+.landingPage{
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+.landingImg{
+    width: 300px;
+}
+.slogan{
+    text-align: center;
+    width: 60%;
+    font-family: 'Lora', serif;
+}
+.questions{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lora', serif;
+}
+.question1, .question2{
+    text-align: center;
+    width: 40%;
+}
+.inicioButton{
+    background-color: $dark-lilac;
+    padding: 10px 20px;
+    border-radius: 15px;
+}

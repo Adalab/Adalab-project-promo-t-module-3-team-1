@@ -9,7 +9,12 @@
   cursor: pointer;
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width:764px){
+    flex-direction: row;
+    justify-content: space-between;
+  }
   &--btn {
     width: 160px;
     display: inline-block;
