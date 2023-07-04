@@ -2,8 +2,8 @@ import '../styles/layout/preview.scss';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import cover from '../images/cover.jpeg';
-import user from '../images/user.jpeg';
+import cover from '../images/proyectimg.jpg';
+import user from '../images/profilegirld.png';
 
 const Preview = ({ data, handleReset}) => {
   return (
