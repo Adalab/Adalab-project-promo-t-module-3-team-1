@@ -52,7 +52,21 @@ function App() {
     const cloneData = { ...data, [propName]: value };
     setData(cloneData);
   };
-
+  const handleReset = (ev) =>{
+    ev.preventDefault();
+    setData ({
+      name: '',
+      slogan: '',
+      technologies: '',
+      demo: '',
+      repo: '',
+      desc: '',
+      autor: '',
+      job: '',
+      image: '',
+      photo: '',
+    })
+  }
   return (
     <div className="container">
       <Header></Header>
@@ -69,7 +83,7 @@ function App() {
               <>
                 <Hero></Hero>
                 <div className="main__section">
-                  <Preview data={data}></Preview>
+                  <Preview data={data} handleReset={handleReset}></Preview>
                   <Form
                     handleInputs={handleInputs}
                     data={data}
