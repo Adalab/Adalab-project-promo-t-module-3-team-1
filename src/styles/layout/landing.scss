@@ -12,22 +12,42 @@
 }
 .slogan{
     text-align: center;
-    width: 60%;
+    width: 95%;
     font-family: 'Lora', serif;
+    font-size: 18px;
+    @media screen and (min-width:1024px) {
+        width: 50%;
+    }
 }
 .questions{
     display: flex;
+    flex-direction: column;
     gap: 30px;
     align-items: center;
     justify-content: center;
     font-family: 'Lora', serif;
+    @media screen and (min-width:1024px) {
+        flex-direction: row;
+    }
 }
 .question1, .question2{
     text-align: center;
-    width: 40%;
+    width: 90%;
+    background: linear-gradient(90deg, $light-lilac -1.57%, $dark-lilac 98.43%);
+    padding: 15px;
+    border-radius: 10px;
+    @media screen and (min-width:1024px) {
+        width: 40%;
+        height: 130px;
+        display: flex;
+        align-items: center;
+    }
+}
+.question2{
+    background: linear-gradient(90deg, $dark-lilac -1.57%, $light-lilac 98.43%);
 }
 .inicioButton{
-    background-color: $dark-lilac;
+    background: linear-gradient(90deg, $dark-lilac -1.57%, $light-lilac 98.43%);
     padding: 10px 20px;
     border-radius: 15px;
 }
