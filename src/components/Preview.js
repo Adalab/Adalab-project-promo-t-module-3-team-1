@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cover from '../images/cover.jpeg';
 import user from '../images/user.jpeg';
 
-const Preview = ({ data }) => {
+const Preview = ({ data, handleReset}) => {
   return (
     <section className="preview">
       <img className="preview__image" src={data.photo || cover} alt="#" />
@@ -54,6 +54,11 @@ const Preview = ({ data }) => {
           <p className="infoAutor__name">{data.autor || 'Emmelie Björklund'}</p>
         </section>
       </section>
+      <div className='reset'>
+        <button className='resetBtn' onClick={handleReset}>
+          Reset
+        </button>
+      </div>
     </section>
   );
 };

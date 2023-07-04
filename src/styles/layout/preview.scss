@@ -111,3 +111,18 @@
       font-size: 16px;
     }
   }
+  .reset{
+    text-align: center;
+  }
+  .resetBtn{
+    background-color: $dark-lilac;
+    line-height: 43px;
+    font-size: 13px;
+    color: $white;
+    text-align: center;
+    border: none;
+    height: 43px;
+    width: 120px;
+    border-radius: 20px;
+    transform: translateY(-50px);
+  }
